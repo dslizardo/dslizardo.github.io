@@ -109,12 +109,100 @@
         }
 
         @media (max-width: 768px) {
-            .comparison-table {
-                font-size: 12px;
-            }
-            .container {
+            body {
                 margin: 10px;
-                padding: 15px;
+            }
+            
+            .container {
+                margin: 5px;
+                padding: 10px;
+                overflow-x: auto;
+            }
+            
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+            
+            .comparison-table {
+                font-size: 10px;
+                min-width: 800px;
+                overflow-x: auto;
+                display: block;
+                white-space: nowrap;
+            }
+            
+            .comparison-table thead,
+            .comparison-table tbody,
+            .comparison-table th,
+            .comparison-table td,
+            .comparison-table tr {
+                display: block;
+            }
+            
+            .comparison-table thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            
+            .comparison-table tr {
+                border: 1px solid #ccc;
+                margin-bottom: 10px;
+                padding: 10px;
+                background: white;
+                border-radius: 5px;
+            }
+            
+            .comparison-table td {
+                border: none;
+                padding: 8px;
+                text-align: left;
+                white-space: normal;
+                position: relative;
+                padding-left: 30%;
+            }
+            
+            .comparison-table td:before {
+                content: attr(data-label) ": ";
+                position: absolute;
+                left: 6px;
+                width: 25%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                color: #333;
+            }
+            
+            .activities {
+                line-height: 1.4;
+            }
+            
+            .activities div {
+                margin: 2px 0;
+                padding: 1px 0;
+            }
+            
+            .price {
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .comparison-table {
+                font-size: 9px;
+            }
+            
+            .container {
+                padding: 5px;
+            }
+            
+            h1 {
+                font-size: 1.3em;
+            }
+            
+            .price {
+                font-size: 14px;
             }
         }
 
@@ -135,9 +223,11 @@
         <table class="comparison-table">
             <thead>
                 <tr>
-                    <th style="width: 20%;">Aspect</th>
-                    <th style="width: 40%;">Kuya Marlow Package</th>
-                    <th style="width: 40%;">Saneca Travels Package</th>
+                    <th style="width: 12%;">Aspect</th>
+                    <th style="width: 22%;">Kuya Marlow Package</th>
+                    <th style="width: 22%;">Saneca Travels Package</th>
+                    <th style="width: 22%;">Nakita ni Iche Package</th>
+                    <th style="width: 22%;">Nakita ni Abby Package</th>
                 </tr>
             </thead>
             <tbody>
@@ -145,18 +235,24 @@
                     <td class="category">🏢 Provider</td>
                     <td class="provider">Kuya Marlow</td>
                     <td class="provider">Saneca Travels</td>
+                    <td class="provider">Nakita ni Iche</td>
+                    <td class="provider">Nakita ni Abby</td>
                 </tr>
                 
                 <tr>
                     <td class="category">💰 Total Price</td>
                     <td class="price">₱34,500<br><small>(with accommodation)</small></td>
                     <td class="price">₱35,999<br><small>(without accommodation)</small></td>
+                    <td class="price">₱58,250<br><small>(with accommodation)<br>Anniversary Promo until Oct 31<br><strike>₱62,750</strike></small></td>
+                    <td class="price">₱18,700/Person<br><small>(₱74,800 for 4 pax)<br>All-inclusive with accommodation</small></td>
                 </tr>
                 
                 <tr>
                     <td class="category">👥 Capacity</td>
                     <td>Not specified</td>
                     <td>1-5 people maximum</td>
+                    <td>Good for 4 people</td>
+                    <td>Minimum 4 people</td>
                 </tr>
                 
                 <tr>
@@ -178,6 +274,28 @@
                         <div>🛤️ Dahilayan Alpine Village</div>
                         <div>🍍 Pineapple Icon</div>
                         <div>📸 Camp Phillips</div>
+                    </td>
+                    <td class="activities">
+                        <strong>BUKIDNON</strong><br>
+                        <div>🚘 Pick up CDO AIRPORT 5:55am</div>
+                        <div>📍 Dahilayan Adventure Park</div>
+                        <div>📍 Dahilayan Forest Park</div>
+                        <div>📍 Dahilayan Alpine</div>
+                        <div>📍 Camp Philips with Pineapple plantation</div>
+                        <div>🏕️ Sleepover at Rotypeaks-Kubloy</div>
+                    </td>
+                    <td class="activities">
+                        <strong>ARRIVAL & CAMIGUIN LAND TOUR</strong><br>
+                        <div>✈️ Arrival at Airport</div>
+                        <div>🚢 Transfer to Balingoan Port & Camiguin</div>
+                        <div>👁️ Tongatok View Point</div>
+                        <div>🚶‍♂️ Walkway Station of the Cross</div>
+                        <div>⚰️ Sunken Cemetery</div>
+                        <div>⛪ Old Church Ruins</div>
+                        <div>🥤 Soda Water Pool</div>
+                        <div>🌊 Tuasan Falls</div>
+                        <div>❄️ Sto. Niño Cold Spring</div>
+                        <div>♨️ Ardent Hibok-Hibok Spring</div>
                     </td>
                 </tr>
                 
@@ -201,6 +319,24 @@
                         <div>🌉 Pinaanan Bridge</div>
                         <div>🏍️ ATV Rides</div>
                         <div>🍍 Pineapple Plantation</div>
+                    </td>
+                    <td class="activities">
+                        <strong>BUKIDNON</strong><br>
+                        <div>📍 Roty Peaks Ridge Camp</div>
+                        <div>📍 Cedar Falls (Tempo Closed)</div>
+                        <div>📍 Communal Ranch</div>
+                        <div>📍 Impasug.ong Tribal Mark</div>
+                        <div>📍 Lovers Lane</div>
+                        <div><strong>OPTIONAL:</strong> 📍KAPANGLAW ATV</div>
+                        <div>🏪 Sleepover at FB Dormitel Suites-4pax Dorm Room Type</div>
+                    </td>
+                    <td class="activities">
+                        <strong>CAMIGUIN ISLAND HOPPING</strong><br>
+                        <div>🍽️ Breakfast at the Hotel</div>
+                        <div>🏝️ White Island</div>
+                        <div>🏝️ Mantigue Island</div>
+                        <div>🚢 Transfer Back to Balingoan Port</div>
+                        <div>🚗 Travel to Impasug-ong Accommodation</div>
                     </td>
                 </tr>
                 
@@ -227,6 +363,30 @@
                         <div>⛪ Old Church Ruins</div>
                         <div>🌋 Ways to Old Volcano</div>
                     </td>
+                    <td class="activities">
+                        <strong>CAMIGUIN</strong><br>
+                        <div>🚘 Travel to Camiguin from CDO 4AM</div>
+                        <div>📍 Tongatok Cliff</div>
+                        <div>📍 Walkway to old Volcanous</div>
+                        <div>📍 Sunken Cemetery</div>
+                        <div>📍 Old Church Ruins</div>
+                        <div>📍 Soda Water Falls</div>
+                        <div>📍 Tres Marias</div>
+                        <div>📍 Tuasan Falls</div>
+                        <div>📍 Sto Niño Coldspring</div>
+                        <div>📍 Beehive Cafe</div>
+                        <div>🏪 Sleepover Seaside Travellers-Deluxe Room Type</div>
+                    </td>
+                    <td class="activities">
+                        <strong>IMPASUG-ONG TOUR</strong><br>
+                        <div>🍽️ Breakfast at the Hotel</div>
+                        <div>🏛️ Panika Headress</div>
+                        <div>👩‍❤️‍👨 Lovers Lane</div>
+                        <div>⛰️ Communal Ranch</div>
+                        <div>🛑 Kapanglaw Stopover (ATV at Pineapple Adventure)</div>
+                        <div>🍍 Pineapple Plantation</div>
+                        <div><strong>OPTIONAL:</strong> ⛰️ Rotypeaks</div>
+                    </td>
                 </tr>
                 
                 <tr>
@@ -245,6 +405,26 @@
                         <div>🏝️ Mantigue Island</div>
                         <div>🛍️ Vjandep Pasalubong</div>
                         <div>🚗 Travel to CDO</div>
+                    </td>
+                    <td class="activities">
+                        <strong>CAMIGUIN</strong><br>
+                        <div>📍 White Island</div>
+                        <div>📍 Mantigue Island</div>
+                        <div>📍 Katunggan Park</div>
+                        <div>📍 Katibawasan Falls</div>
+                        <div>📍 Utopia Cafe</div>
+                        <div>📍 Camiguin Signage</div>
+                        <div>🚘 Travel Back to CDO</div>
+                        <div>🏪 Sleepover at FB Dormitel-4pax Dorm Room Type with breakfast</div>
+                    </td>
+                    <td class="activities">
+                        <strong>DAHILAYAN TOUR</strong><br>
+                        <div>🍽️ Breakfast at the Hotel</div>
+                        <div>🛤️ Adventure Park</div>
+                        <div>🛤️ Forest Park</div>
+                        <div>🛤️ Alpine Village</div>
+                        <div>📸 Camp Phillips</div>
+                        <div>🍍 Big Pineapple</div>
                     </td>
                 </tr>
                 
@@ -267,6 +447,20 @@
                         <div>🕍 Divine Mercy</div>
                         <div>🛍️ CDO Pasalubong</div>
                     </td>
+                    <td class="activities">
+                        <strong>CDO</strong><br>
+                        <div>📍 Amaya View</div>
+                        <div>📍 Noah's Ark</div>
+                        <div>📍 High Ridge</div>
+                        <div>🚘 Drop off CDO Airport 2pm</div>
+                    </td>
+                    <td class="activities">
+                        <strong>CDO FINAL DAY</strong><br>
+                        <div>🍽️ Breakfast at the Hotel</div>
+                        <div>🕍 Visit Divine Mercy</div>
+                        <div>🛶 White River Rafting</div>
+                        <div>✈️ Drop off at the Airport</div>
+                    </td>
                 </tr>
                 
                 <tr>
@@ -286,6 +480,35 @@
                         • Drone shots (Roty, Communal, Camiguin Island)<br>
                         • Barge transfer (vehicle)
                     </td>
+                    <td class="inclusion">
+                        • Vehicle-INNOVA<br>
+                        • Fuel<br>
+                        • Driver<br>
+                        • Parking fees<br>
+                        • 4 nights accommodation<br>
+                        • Pickup airport/hotel<br>
+                        • Dropoff airport/hotel<br>
+                        • Boat fare Mantigue Island<br>
+                        • Boat fare White Island<br>
+                        • Roro fare Balingoan-Camiguin vise versa<br>
+                        • Terminal Fee Camiguin<br>
+                        • Vehicle Transfer Camiguin
+                    </td>
+                    <td class="inclusion">
+                        • Roundtrip Airport Transfer<br>
+                        • Accommodation in Camiguin<br>
+                        • Accommodation in Bukidnon<br>
+                        • Accommodation in CDO<br>
+                        • Camiguin Land Tour<br>
+                        • Camiguin Island Hopping<br>
+                        • Impasug-ong Day Tour<br>
+                        • Dahilayan Day Tour<br>
+                        • CDO White Water Rafting<br>
+                        • All Tour Transfer<br>
+                        • All Entrance fee<br>
+                        • Tour guide<br>
+                        • Photographer & Drone Pilot
+                    </td>
                 </tr>
                 
                 <tr>
@@ -302,6 +525,17 @@
                         • Parking fees<br>
                         • Rafting fee<br>
                         • Anything not mentioned above
+                    </td>
+                    <td class="exclusion">
+                        • Meals<br>
+                        • Entrance fees<br>
+                        • Habal2/4x4 fare going to Rotypeaks
+                    </td>
+                    <td class="exclusion">
+                        • Airfare/Boatfare<br>
+                        • Rides in Dahilayan Forest & Adventure Park<br>
+                        • Horse Back Riding<br>
+                        • Anything not mentioned in the inclusions
                     </td>
                 </tr>
                 
@@ -323,191 +557,56 @@
                         • Vehicle barge transfer included<br>
                         • Multi-island drone coverage
                     </td>
+                    <td class="highlight-difference">
+                        • <strong>All-Inclusive Premium Package</strong><br>
+                        • Anniversary promo pricing until Oct 31<br>
+                        • Complete accommodation included<br>
+                        • All transportation & transfers covered<br>
+                        • Island hopping boat fares included<br>
+                        • INNOVA vehicle for comfort<br>
+                        • Fixed 4-person capacity
+                    </td>
+                    <td class="highlight-difference">
+                        • <strong>Ultimate All-Inclusive Experience</strong><br>
+                        • ALL entrance fees included<br>
+                        • White water rafting included<br>
+                        • Professional photographer & drone pilot<br>
+                        • Complete 3-island coverage<br>
+                        • All accommodations provided<br>
+                        • Per-person pricing flexibility<br>
+                        • Comprehensive tour guide services
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td class="category">📝 Special Notes</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td class="activities">
+                        <strong>ACCOMMODATION:</strong><br>
+                        Price may vary depending on actual booking if the hotel in quotation is fully booked.<br><br>
+                        
+                        <strong>ROTYPEAKS:</strong><br>
+                        Habal2 ₱700 per pax Balikan
+                    </td>
+                    <td class="activities">
+                        <strong>OPTIONAL ADD-ONS:</strong><br>
+                        • Roty Peaks w/ Drone & Habal-Habal - ₱1,300/Pax<br>
+                        • ATV Adventure at Pineapple Plantation - ₱950/Pax<br><br>
+                        
+                        <strong>HOW TO RESERVE:</strong><br>
+                        • Downpayment: ₱3,000/Person<br>
+                        • Remaining Balance must be fully paid 5 days before the tour<br><br>
+                        
+                        <strong>MODE OF PAYMENT:</strong><br>
+                        • Credit Card (5% transaction fee)<br>
+                        • Cash, GCash, or Bank Transfer
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <div class="container">
-        <h1>🏔️ 2D1N Bukidnon Packages 🏔️</h1>
-        
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th style="width: 20%;">Aspect</th>
-                    <th style="width: 40%;">Saneca Travels (2D1N)</th>
-                    <th style="width: 40%;">4x4 Tours Impasug-ong</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="category">🏢 Provider</td>
-                    <td class="provider">Saneca Travels</td>
-                    <td class="provider">4x4 Tours Impasug-ong</td>
-                </tr>
-                
-                <tr>
-                    <td class="category">💰 Total Price</td>
-                    <td class="price">₱14,999<br><small>(without accommodation)</small></td>
-                    <td class="price">₱12,000-₱20,000<br><small>Multiple options available</small></td>
-                </tr>
-                
-                <tr>
-                    <td class="category">💰 Pricing Breakdown</td>
-                    <td>Single package price<br>Good for 1-5 people</td>
-                    <td class="activities">
-                        <strong>Tour Only (No Accommodation):</strong><br>
-                        • ₱12,000 (2-4 people)<br>
-                        • ₱15,000 (5-10 people)<br><br>
-                        <strong>Tour + Mountain View Accommodation:</strong><br>
-                        • ₱17,000 (2-4 people)<br>
-                        • ₱20,000 (5-10 people)<br><br>
-                        <strong>Tour + Town Proper Accommodation:</strong><br>
-                        • ₱14,500 (2-4 people)<br>
-                        • ₱17,500 (5-10 people)
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td class="category">👥 Capacity</td>
-                    <td>1-5 people maximum</td>
-                    <td>2-10 people (varies by package)</td>
-                </tr>
-                
-                <tr>
-                    <td class="day-header">📅 Day 1</td>
-                    <td class="activities">
-                        <strong>DAHILAYAN</strong><br>
-                        <div>🛤️ Dahilayan Adventure Park</div>
-                        <div>🛤️ Dahilayan Alpine Village</div>
-                        <div>🛤️ Dahilayan Forest Park</div>
-                        <div>🍍 Pineapple Plantation</div>
-                        <div>🍍 Del Monte Pineapple Marker</div>
-                        <div>📸 Camp Phillips</div>
-                        <div>🏨 Check-in accommodation (Impasug-ong area)</div>
-                    </td>
-                    <td class="activities">
-                        <strong>ARRIVAL & DAHILAYAN TOUR</strong><br>
-                        <div>✈️ Airport Pickup</div>
-                        <div>🍽️ Breakfast stop (fast food)</div>
-                        <div>🍍 Pineapple Icon</div>
-                        <div>🛤️ Dahilayan Forest Park</div>
-                        <div>🛤️ Dahilayan Adventure Park</div>
-                        <div>🏔️ Alpine Village</div>
-                        <div>🏨 Check-in at accommodation</div>
-                        <div><em>Note: Driver-guide waits outside while you explore the Dahilayan parks</em></div>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td class="day-header">📅 Day 2</td>
-                    <td class="activities">
-                        <strong>IMPASUG-ONG</strong><br>
-                        <div>⛰️ Rotypeaks Ridge Camp (day tour)</div>
-                        <div>🌉 Pinaanan Bridge</div>
-                        <div>⛰️ Communal Ranch</div>
-                        <div>👩‍❤️‍👨 Lovers Lane</div>
-                        <div>🍽️ Lunch @ Cowboy Town</div>
-                        <div>🍍 Plantation</div>
-                        <div>🏬 Impasug-ong Tourism Center</div>
-                        <div>🏍️ Kapanglaw Stop over ATV RIDE</div>
-                    </td>
-                    <td class="activities">
-                        <strong>IMPASUG-ONG TOUR & OPTIONAL ROTYPEAKS</strong><br>
-                        <div>🚗 Pick-up from accommodation</div>
-                        <div>⛰️ Communal Ranch</div>
-                        <div>👩‍❤️‍👨 Lover's Lane</div>
-                        <div>🍍 Pineapple Plantation</div>
-                        <div>🌉 Pinaanan Bridge</div>
-                        <div>⛰️ Rotypeaks (Optional - ₱300/head + ₱4,000 for 4x4 or ₱700/head for habal-habal)</div>
-                        <div>🏍️ ATV Ride (Optional - ₱600/person)</div>
-                        <div>🍽️ Cowboy Town Restaurant (lunch)</div>
-                        <div>🛍️ Proud Lumad Souvenir Shop</div>
-                        <div>🚗 Drop-off: Malaybalay, Impasug-ong, Manolo Fortich, CDO, or Airport</div>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td class="category">✅ INCLUSIONS</td>
-                    <td class="inclusion">
-                        • Airport pick-up & drop-off (same day of tour)<br>
-                        • Driver, gasoline, vehicle<br>
-                        • Photographer<br>
-                        • Drone shots (Communal, Roty peaks)
-                    </td>
-                    <td class="inclusion">
-                        • Private, exclusive car transportation<br>
-                        • Free drone shots (selected locations)<br>
-                        • Driver/Guide/Photographer*<br>
-                        • Fuel<br>
-                        • Multiple accommodation options<br>
-                        <em>*Driver serves as both guide and photographer (except inside Dahilayan Parks)</em>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td class="category">❌ EXCLUSIONS</td>
-                    <td class="exclusion">
-                        • Accommodation<br>
-                        • Meals<br>
-                        • Dahilayan rides<br>
-                        • Entrance fees<br>
-                        • Parking fees (Roty ₱300, Communal ₱200)<br>
-                        • ATV ride fee
-                    </td>
-                    <td class="exclusion">
-                        • Roundtrip Airfare (can arrange)<br>
-                        • Entrance Fees:<br>
-                        &nbsp;&nbsp;- Communal Ranch: ₱70/head + ₱200/car<br>
-                        &nbsp;&nbsp;- Dahilayan Adventure Park: ₱100<br>
-                        &nbsp;&nbsp;- Dahilayan Forest Park: ₱150<br>
-                        &nbsp;&nbsp;- Rotypeaks: ₱300/head<br>
-                        • Rotypeaks transportation<br>
-                        • ATV Ride: ₱600/person<br>
-                        • Meals/Food<br>
-                        • Others not mentioned
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td class="category">💳 Payment Terms</td>
-                    <td>
-                        <strong>Reservation Requirements:</strong><br>
-                        • 20% downpayment required<br>
-                        • Payment: GCash/Cash/Bank Transfer<br>
-                        • Downpayment non-refundable<br>
-                        • CDO/Impasug-ong pickup included<br>
-                        • Other pickup points have minimal charge
-                    </td>
-                    <td>
-                        <strong>Pricing Structure:</strong><br>
-                        • Prices are per group, not per head<br>
-                        • Subject to accommodation availability<br>
-                        • Alternative accommodation areas: Dahilayan, Manolo Fortich, Impasug-ong, or nearby areas
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td class="category">🎯 Key Advantages</td>
-                    <td class="highlight-difference">
-                        • <strong>Simple, fixed pricing structure</strong><br>
-                        • Professional photography included<br>
-                        • Drone shots included<br>
-                        • Comprehensive 2-day Bukidnon experience<br>
-                        • Rotypeaks day tour included
-                    </td>
-                    <td class="highlight-difference">
-                        • <strong>Maximum pricing flexibility</strong><br>
-                        • Multiple accommodation tiers<br>
-                        • Larger group capacity (up to 10 people)<br>
-                        • Optional Rotypeaks with transport options<br>
-                        • Detailed entrance fee breakdown<br>
-                        • Multiple drop-off locations
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 
     <div class="container">
         <h1>💰 Entrance Fees Not Included in Travel Packages 💰</h1>
@@ -640,7 +739,7 @@
                     <td class="price">₱35,999<br><small>(without accommodation)</small></td>
                     <td class="activities">
                         <strong>Bukidnon:</strong><br>
-                        • Roty Peaks: ₱4,200 (₱1,050 × 4)<br>
+                        • Roty Peaks: ₱1,400 (₱350 × 4)<br>
                         • Dahilayan Parks: ₱1,400 (₱350 × 4)<br>
                         • Communal Ranch: ₱1,480 (₱370 × 4)<br><br>
                         
@@ -652,41 +751,54 @@
                         <strong>CDO:</strong><br>
                         • White Water Rafting: ₱6,000<br><br>
                         
-                        <strong class="price">Total Entrance Fees: ₱15,780</strong><br>
-                        <strong class="price">GRAND TOTAL: ₱51,779</strong><br>
+                        <strong class="price">Total Entrance Fees: ₱12,980</strong><br>
+                        <strong class="price">GRAND TOTAL: ₱48,979</strong><br>
                         <small class="exclusion">*Plus accommodation costs</small>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td class="category">🏔️ Saneca Travels 2D1N Bukidnon</td>
-                    <td class="price">₱14,999<br><small>(without accommodation)</small></td>
+                    <td class="category">🌴 Nakita ni Iche 5D4N Package</td>
+                    <td class="price">₱58,250<br><small>(with accommodation)<br>Anniversary Promo</small></td>
                     <td class="activities">
-                        <strong>Bukidnon Only:</strong><br>
+                        <strong>Bukidnon:</strong><br>
                         • Roty Peaks: ₱4,200 (₱1,050 × 4)<br>
                         • Dahilayan Parks: ₱1,400 (₱350 × 4)<br>
                         • Communal Ranch: ₱1,480 (₱370 × 4)<br><br>
                         
-                        <strong class="price">Total Entrance Fees: ₱7,080</strong><br>
-                        <strong class="price">GRAND TOTAL: ₱22,079</strong><br>
-                        <small class="exclusion">*Plus accommodation costs</small>
+                        <strong>Camiguin:</strong><br>
+                        • White Island: Included in package<br>
+                        • Mantigue Island: Included in package<br>
+                        • Other sites: ₱900 (₱225 × 4)<br><br>
+                        
+                        <strong>CDO:</strong><br>
+                        • No rafting included<br><br>
+                        
+                        <strong class="price">Total Entrance Fees: ₱7,980</strong><br>
+                        <strong class="price">GRAND TOTAL: ₱66,230</strong><br>
+                        <small class="inclusion">*All accommodation & boat fares included</small>
                     </td>
                 </tr>
                 
                 <tr>
-                    <td class="category">🏔️ 4x4 Tours 2D1N Bukidnon</td>
-                    <td class="price">₱12,000-₱20,000<br><small>(varies by package)</small></td>
+                    <td class="category">🌴 Nakita ni Abby 5D4N Package</td>
+                    <td class="price">₱74,800<br><small>(₱18,700/person × 4)<br>All-inclusive with accommodation</small></td>
                     <td class="activities">
-                        <strong>Bukidnon Only:</strong><br>
-                        • Roty Peaks: ₱4,200 (₱1,050 × 4)<br>
-                        • Dahilayan Parks: ₱1,400 (₱350 × 4)<br>
-                        • Communal Ranch: ₱1,480 (₱370 × 4)<br><br>
+                        <strong>ALL ENTRANCE FEES INCLUDED:</strong><br>
+                        • Bukidnon: All entrance fees included<br>
+                        • Camiguin: All entrance fees & boat fares included<br>
+                        • CDO: White water rafting included<br><br>
                         
-                        <strong class="price">Total Entrance Fees: ₱7,080</strong><br>
-                        <strong class="price">GRAND TOTAL: ₱19,080-₱27,080</strong><br>
-                        <small class="inclusion">*Depending on package selected</small>
+                        <strong>OPTIONAL ADD-ONS (not included):</strong><br>
+                        • Roty Peaks w/ Drone & Habal-Habal: ₱5,200 (₱1,300 × 4)<br>
+                        • ATV Adventure: ₱3,800 (₱950 × 4)<br><br>
+                        
+                        <strong class="price">Total Additional Entrance Fees: ₱0</strong><br>
+                        <strong class="price">GRAND TOTAL: ₱74,800</strong><br>
+                        <small class="inclusion">*Ultimate all-inclusive package with photographer & drone pilot</small>
                     </td>
                 </tr>
+                
             </tbody>
         </table>
         
